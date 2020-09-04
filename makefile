@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-I.
-DEPS = student.h roster.h
+DEPS = student.h roster.h degree.h
 
 ODIR=obj
 _OBJ = student.o roster.o

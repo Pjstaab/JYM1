@@ -9,7 +9,7 @@ Student::Student(/* args */)
     v_Email = "bad@bad.com";
     v_FirstName = "Mr";
     v_LastName = "Choke";
-    v_StudentId = 42069;
+    v_StudentId = "42069";
     v_Degree = "CS";
 }
 
@@ -39,7 +39,7 @@ int Student::Age() {
     return v_Age;
 }
 
-array<uint8_t, 3> Student::DaysToComplete() {
+array<int, 3> Student::DaysToComplete() {
     return v_DaysToComplete;
 }
 
@@ -48,7 +48,7 @@ string Student::Degree() {
 }
 
 // Setters
-void Student::SetStudentId(uint16_t id) {
+void Student::SetStudentId(string id) {
     v_StudentId = id;
 }
 
@@ -64,7 +64,7 @@ void Student::SetEmail(string email) {
     v_Email = email;
 }
 
-void Student::SetAge(uint8_t age) {
+void Student::SetAge(int age) {
     v_Age = age;
 }
 
