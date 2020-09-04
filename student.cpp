@@ -2,20 +2,22 @@
 #include "student.h"
 
 // Constructor
-Student::Student(/* args */)
-{
-    v_Age = 30;
-    v_DaysToComplete = {0, 1, 3};
-    v_Email = "bad@bad.com";
-    v_FirstName = "Mr";
-    v_LastName = "Choke";
-    v_StudentId = "42069";
-    v_Degree = "CS";
-}
-
-// Destructor
-Student::~Student()
-{
+Student::Student(string studentID,
+                 string firstName,
+                 string lastName,
+                 string emailAddress,
+                 int age,
+                 int daysInCourse1,
+                 int daysInCourse2,
+                 int daysInCourse3,
+                 DegreeProgram degreeProgram) {
+    v_Age            = age;
+    v_DaysToComplete = {daysInCourse1, daysInCourse2, daysInCourse3};
+    v_Email          = emailAddress;
+    v_FirstName      = firstName;
+    v_LastName       = lastName;
+    v_StudentId      = studentID;
+    v_Degree         = degreeProgram;
 }
 
 // Getters
@@ -86,10 +88,10 @@ void Student::Print() {
     cout << to_string(v_Age);
     cout << " [tab] daysInCourse: ";
     cout << "{";
-    for (int i=0; i<v_DaysToComplete.size(); i++) {
+    for (int i = 0; i < v_DaysToComplete.size(); i++) {
         cout << to_string(v_DaysToComplete[i]);
         if (i < v_DaysToComplete.size() - 1)
-        cout << ",";
+            cout << ",";
     }
     cout << "} ";
     // days

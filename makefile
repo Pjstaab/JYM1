@@ -3,7 +3,7 @@ CFLAGS=-I.
 DEPS = student.h roster.h degree.h
 
 ODIR=obj
-_OBJ = student.o roster.o
+_OBJ = student.o roster.o degree.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS) makedir
