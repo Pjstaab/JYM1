@@ -14,15 +14,15 @@ void Roster::add(string studentID,
                  int daysInCourse3,
                  DegreeProgram degreeProgram) {
 
-    const auto student = new Student(string studentID,
-            string firstName,
-            string lastName,
-            string emailAddress,
-            int age,
-            int daysInCourse1,
-            int daysInCourse2,
-            int daysInCourse3,
-            DegreeProgram degreeProgram);
+    Student* student = new Student(studentID,
+            firstName,
+            lastName,
+            emailAddress,
+            age,
+            daysInCourse1,
+            daysInCourse2,
+            daysInCourse3,
+            degreeProgram);
 
     for (int i = 0; i < 5; ++i) {
         if (v_classRosterArray[i] == NULL) {
