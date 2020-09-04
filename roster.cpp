@@ -14,7 +14,7 @@ void Roster::add(string studentID,
                  int daysInCourse3,
                  DegreeProgram degreeProgram) {
 
-    const student = new Student(string studentID,
+    const auto student = new Student(string studentID,
             string firstName,
             string lastName,
             string emailAddress,
