@@ -1,6 +1,5 @@
 #include <string>
 #include <array>
-#include "degree.h"
 #include "student.h"
 
 using namespace std;
