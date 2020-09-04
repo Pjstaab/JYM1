@@ -45,7 +45,7 @@ array<int, 3> Student::getDaysToComplete() {
     return v_DaysToComplete;
 }
 
-string Student::getDegree() {
+DegreeProgram Student::getDegree() {
     return v_Degree;
 }
 
@@ -74,7 +74,7 @@ void Student::setDaysToComplete(array<int, 3> daysToComplete) {
     v_DaysToComplete = daysToComplete;
 }
 
-void Student::setDegree(string degree) {
+void Student::setDegree(DegreeProgram degree) {
     v_Degree = degree;
 }
 

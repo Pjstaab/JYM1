@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "student.h"
+#include "degree.h"
 
 using namespace std;
 
@@ -27,6 +28,15 @@ int main() {
                                   // Should this be A5 or my actual student id?
                                   "A5,Pierce,Staab,pstaab1@wgu.edu,28,1,2,3,SOFTWARE"};
 
+    DegreeProgram degree;
+    switch (params.at(9)) {
+        case "SECURITY":
+            degree = SECURITY;
+        case "NETWORK":
+            degree = NETWORK;
+        case "SOFTWARE":
+            degree = SOFTWARE;
+    }
     for (int i = 0; i < len; ++i) {
         cout << params.at(i);
         cout << "\n";

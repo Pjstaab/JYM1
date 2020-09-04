@@ -14,7 +14,7 @@ private:
     string v_Email;
     int v_Age;
     array<int, 3> v_DaysToComplete;
-    string v_Degree;
+    DegreeProgram v_Degree;
 
 public:
     Student(string studentID,
@@ -35,7 +35,7 @@ public:
     string getEmail();
     int getAge();
     array<int, 3> getDaysToComplete();
-    string getDegree();
+    DegreeProgram getDegree();
 
     // Setters
     void setStudentID(string id);
@@ -44,7 +44,7 @@ public:
     void setEmail(string email);
     void setAge(int age);
     void setDaysToComplete(array<int, 3> daysToComplete);
-    void setDegree(string degree);
+    void setDegree(DegreeProgram degree);
 
     // Print
     void print();

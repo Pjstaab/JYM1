@@ -1,3 +1,4 @@
+#include <iostream>
 #include "roster.h"
 
 using namespace std;
@@ -25,7 +26,7 @@ void Roster::add(string studentID,
 
     for (int i = 0; i < 5; ++i) {
         if (v_classRosterArray[i] == NULL) {
-            v_classRosterArray[i] = &student;
+            v_classRosterArray[i] = student;
         }
     }
 }
@@ -34,7 +35,7 @@ void Roster::remove(string studentID) {
     for (int i = 0; i < 5; ++i) {
         if (v_classRosterArray[i] != NULL) {
             Student student = *v_classRosterArray[i];
-            if (student.StudentId() == studentID) {
+            if (student.getStudentID() == studentID) {
                 v_classRosterArray[i] = NULL;
             }
         }
@@ -54,7 +55,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
     for (int i = 0; i < 5; ++i) {
         if (v_classRosterArray[i] != NULL) {
             Student student = *v_classRosterArray[i];
-            if (student.StudentId() == studentID) {
+            if (student.getStudentID() == studentID) {
                 int days[] = student.getDaysToComplete();
                 cout << (days[0] + days[1] + days[2]) / 3;
             }
