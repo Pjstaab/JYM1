@@ -12,6 +12,7 @@ void Roster::add(string studentID,
                  int daysInCourse3,
                  DegreeProgram degreeProgram) {
 
+
     Student* student = new Student(studentID, 
             firstName,
             lastName,
