@@ -1,5 +1,6 @@
 #include <string>
 #include <array>
+#include "degree.h"
 
 using namespace std;
 
@@ -16,7 +17,15 @@ private:
     string v_Degree;
 
 public:
-    Student(/* args */);
+    Student(string studentID,
+            string firstName,
+            string lastName,
+            string emailAddress,
+            int age,
+            int daysInCourse1,
+            int daysInCourse2,
+            int daysInCourse3,
+            DegreeProgram degreeProgram);
     ~Student();
 
     // Getters
