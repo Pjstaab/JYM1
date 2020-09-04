@@ -13,7 +13,7 @@ void Roster::add(string studentID,
                  DegreeProgram degreeProgram) {
 
 
-    Student* student = new Student(studentID, 
+    auto student = new Student(studentID,
             firstName,
             lastName,
             emailAddress,
@@ -25,7 +25,7 @@ void Roster::add(string studentID,
 
     for (int i = 0; i < 5; ++i) {
         if (v_classRosterArray[i] == NULL) {
-            v_classRosterArray[i] = student;
+            v_classRosterArray[i] = &student;
         }
     }
 }
@@ -42,15 +42,35 @@ void Roster::remove(string studentID) {
 }
 
 void Roster::printAll() {
-
+    for (int i = 0; i < 5; ++i) {
+        if (v_classRosterArray[i] != NULL) {
+            Student student = *v_classRosterArray[i];
+            student.print();
+        }
+    }
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
-
+    for (int i = 0; i < 5; ++i) {
+        if (v_classRosterArray[i] != NULL) {
+            Student student = *v_classRosterArray[i];
+            if (student.StudentId() == studentID) {
+                int days[] = student.getDaysToComplete();
+                cout << (days[0] + days[1] + days[2]) / 3;
+            }
+        }
+    }
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-
+    for (int i = 0; i < 5; ++i) {
+        if (v_classRosterArray[i] != NULL) {
+            Student student = *v_classRosterArray[i];
+            if (student.getDegree() == degreeProgram) {
+                student.print();
+            }
+        }
+    }
 }
 
 void Roster::printInvalidEmails() {

@@ -21,65 +21,65 @@ Student::Student(string studentID,
 }
 
 // Getters
-string Student::StudentId() {
+string Student::getStudentID() {
     return v_StudentId;
 }
 
-string Student::FirstName() {
+string Student::getFirstName() {
     return v_FirstName;
 }
 
-string Student::LastName() {
+string Student::getLastName() {
     return v_LastName;
 }
 
-string Student::Email() {
+string Student::getEmail() {
     return v_Email;
 }
 
-int Student::Age() {
+int Student::getAge() {
     return v_Age;
 }
 
-array<int, 3> Student::DaysToComplete() {
+array<int, 3> Student::getDaysToComplete() {
     return v_DaysToComplete;
 }
 
-string Student::Degree() {
+string Student::getDegree() {
     return v_Degree;
 }
 
 // Setters
-void Student::SetStudentId(string id) {
+void Student::setStudentID(string id) {
     v_StudentId = id;
 }
 
-void Student::SetFirstName(string firstName) {
+void Student::setFirstName(string firstName) {
     v_FirstName = firstName;
 }
 
-void Student::SetLastName(string lastName) {
+void Student::setLastName(string lastName) {
     v_LastName = lastName;
 }
 
-void Student::SetEmail(string email) {
+void Student::setEmail(string email) {
     v_Email = email;
 }
 
-void Student::SetAge(int age) {
+void Student::setAge(int age) {
     v_Age = age;
 }
 
-void Student::SetDaysToComplete(array<int, 3> daysToComplete) {
+void Student::setDaysToComplete(array<int, 3> daysToComplete) {
     v_DaysToComplete = daysToComplete;
 }
 
-void Student::SetDegree(string degree) {
+void Student::setDegree(string degree) {
     v_Degree = degree;
 }
 
 // Print
-void Student::Print() {
+void Student::print() {
     cout << "A1 [tab] First Name: ";
     cout << v_FirstName;
     cout << " [tab] Last Name: ";

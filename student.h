@@ -29,23 +29,23 @@ public:
     ~Student();
 
     // Getters
-    string StudentId();
-    string FirstName();
-    string LastName();
-    string Email();
-    int Age();
-    array<int, 3> DaysToComplete();
-    string Degree();
+    string getStudentID();
+    string getFirstName();
+    string getLastName();
+    string getEmail();
+    int getAge();
+    array<int, 3> getDaysToComplete();
+    string getDegree();
 
     // Setters
-    void SetStudentId(string id);
-    void SetFirstName(string firstName);
-    void SetLastName(string lastName);
-    void SetEmail(string email);
-    void SetAge(int age);
-    void SetDaysToComplete(array<int, 3> daysToComplete);
-    void SetDegree(string degree);
+    void setStudentID(string id);
+    void setFirstName(string firstName);
+    void setLastName(string lastName);
+    void setEmail(string email);
+    void setAge(int age);
+    void setDaysToComplete(array<int, 3> daysToComplete);
+    void setDegree(string degree);
 
     // Print
-    void Print();
+    void print();
 };
