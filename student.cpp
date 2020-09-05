@@ -1,5 +1,6 @@
 #include <iostream>
 #include "student.h"
+#include "degree.h"
 
 // Constructor
 Student::Student(string studentID,
@@ -80,13 +81,17 @@ void Student::setDegree(int degree) {
 
 // Print
 void Student::print() {
-    cout << "A1 [tab] First Name: ";
+    cout << "Student ID: ";
+    cout << v_StudentId;
+    cout << "\t First Name: ";
     cout << v_FirstName;
-    cout << " [tab] Last Name: ";
+    cout << "\t Last Name: ";
     cout << v_LastName;
-    cout << " [tab] Age: ";
+    cout << "\t Email Address: ";
+    cout << v_Email;
+    cout << "\t Age: ";
     cout << to_string(v_Age);
-    cout << " [tab] daysInCourse: ";
+    cout << "\t daysInCourse: ";
     cout << "{";
     for (int i = 0; i < v_DaysToComplete.size(); i++) {
         cout << to_string(v_DaysToComplete[i]);
@@ -96,5 +101,16 @@ void Student::print() {
     cout << "} ";
     // days
     cout << " Degree Program: ";
-    cout << v_Degree << endl;
+    switch (v_Degree) {
+        case SOFTWARE:
+            cout << "SOFTWARE";
+            break;
+        case SECURITY:
+            cout << "SECURITY";
+            break;
+        case NETWORK:
+            cout << "NETWORK";
+            break;
+    }
+    cout << endl;
 }
