@@ -11,6 +11,10 @@ bool isEmailValid(const string email)
     return regex_match(email, pattern);
 }
 
+Roster::Roster(){
+
+};
+
 void Roster::add(string studentID,
                  string firstName,
                  string lastName,
@@ -33,7 +37,9 @@ void Roster::add(string studentID,
             degreeProgram);
 
     for (int i = 0; i < 5; ++i) {
-        if (v_classRosterArray[i] == NULL) {
+        if (v_classRosterArray[i]->getStudentID() != "") {
+            cout << i;
+            cout << "\n";
             v_classRosterArray[i] = student;
         }
     }
@@ -45,9 +51,11 @@ void Roster::remove(string studentID) {
             Student student = *v_classRosterArray[i];
             if (student.getStudentID() == studentID) {
                 v_classRosterArray[i] = NULL;
+                return;
             }
         }
     }
+    cout << "Student ID not found\n";
 }
 
 void Roster::printAll() {

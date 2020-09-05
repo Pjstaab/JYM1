@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "degree.h"
 #include "roster.h"
-#include "student.h"
 
 using namespace std;
 
@@ -33,24 +31,37 @@ int main() {
     auto classRoster = new Roster;
 
     for (int i = 0; i < len; ++i) {
-        auto params = split(studentData[i]);
-
+        auto params    = split(studentData[i]);
+        auto studentId = params.at(0).data();
+        auto firstName = params.at(1).data();
+        auto lastName  = params.at(2).data();
+        auto email     = params.at(3).data();
+        auto age       = stoi(params.at(4).data());
+        auto course1   = stoi(params.at(5));
+        auto course2   = stoi(params.at(6));
+        auto course3   = stoi(params.at(7));
+        auto deg       = params.at(8);
         DegreeProgram degree;
-        switch (params.at(9)) {
-            case "SECURITY":
-                degree = SECURITY;
-            case "NETWORK":
-                degree = NETWORK;
-            case "SOFTWARE":
-                degree = SOFTWARE;
+        if (deg == "SECURITY") {
+            degree = SECURITY;
+        } else if (deg == "NETWORK") {
+            degree = NETWORK;
+        } else if (deg == "SOFTWARE") {
+            degree = SOFTWARE;
         }
 
-        classRoster->add(params[0], params[1], params[2], params[3], params[4], stoi(params[5]), stoi(params[6]), stoi(params[7]), degree);
+        cout << studentId;
+        cout << "\n";
+        classRoster->add(studentId, firstName, lastName, email, age, course1, course2, course3, degree);
     }
+    /*
+    classRoster->printAll();
+    classRoster->printInvalidEmails();
+    classRoster->printByDegreeProgram(SOFTWARE);
+    classRoster->remove("A3");
+    classRoster->printAll();
+    classRoster->remove("A3");
+     */
 
-
-
-    // Student *MyStudent = new Student();
-    // MyStudent->Print();
     return 0;
 }

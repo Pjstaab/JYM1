@@ -1,6 +1,5 @@
 #include <string>
 #include <array>
-#include "degree.h"
 
 using namespace std;
 
@@ -14,7 +13,7 @@ private:
     string v_Email;
     int v_Age;
     array<int, 3> v_DaysToComplete;
-    DegreeProgram v_Degree;
+    int v_Degree;
 
 public:
     Student(string studentID,
@@ -25,8 +24,7 @@ public:
             int daysInCourse1,
             int daysInCourse2,
             int daysInCourse3,
-            DegreeProgram degreeProgram);
-    ~Student();
+            int degreeProgram);
 
     // Getters
     string getStudentID();
@@ -35,7 +33,7 @@ public:
     string getEmail();
     int getAge();
     array<int, 3> getDaysToComplete();
-    DegreeProgram getDegree();
+    int getDegree();
 
     // Setters
     void setStudentID(string id);
@@ -44,7 +42,7 @@ public:
     void setEmail(string email);
     void setAge(int age);
     void setDaysToComplete(array<int, 3> daysToComplete);
-    void setDegree(DegreeProgram degree);
+    void setDegree(int degree);
 
     // Print
     void print();
