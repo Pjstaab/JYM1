@@ -56,7 +56,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
         if (v_classRosterArray[i] != NULL) {
             Student student = *v_classRosterArray[i];
             if (student.getStudentID() == studentID) {
-                int days[] = student.getDaysToComplete();
+                auto days = student.getDaysToComplete();
                 cout << (days[0] + days[1] + days[2]) / 3;
             }
         }
