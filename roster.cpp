@@ -1,7 +1,15 @@
 #include <iostream>
+#include <regex>
 #include "roster.h"
 
 using namespace std;
+
+bool isEmailValid(const string email)
+{
+    const regex pattern("[\\w\\.]+@\\w+\\.\\w+");
+
+    return regex_match(email, pattern);
+}
 
 void Roster::add(string studentID,
                  string firstName,
@@ -75,5 +83,13 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 }
 
 void Roster::printInvalidEmails() {
-
+    for (int i = 0; i < 5; ++i) {
+        if (v_classRosterArray[i] != NULL) {
+            Student student = *v_classRosterArray[i];
+            if (isEmailValid(student.getEmail())) {
+                cout << student.getEmail();
+            }
+        }
+    }
 }
+
